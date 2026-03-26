@@ -1,0 +1,263 @@
+.header {
+  background-color: var(--black);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--red);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Wordmark */
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.wordmark:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.wordmarkStar {
+  flex-shrink: 0;
+}
+
+/* Desktop nav */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.navLink {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.15s;
+}
+
+.navLink:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.navLinkActive {
+  color: var(--white);
+  border-bottom: 2px solid var(--red);
+}
+
+/* Right side */
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.createBtn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--white);
+  background-color: var(--red);
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.createBtn:hover {
+  opacity: 0.88;
+  text-decoration: none;
+}
+
+/* Account button */
+.accountWrapper {
+  position: relative;
+}
+
+.accountBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: var(--border-radius);
+  color: var(--white);
+  min-height: 44px;
+}
+
+.accountBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--red);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.accountName {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--white);
+}
+
+.accountHandle {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.chevron {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  overflow: hidden;
+  z-index: 200;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 10px 16px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--black);
+  text-decoration: none;
+  transition: background 0.1s;
+}
+
+.dropdownItem:hover {
+  background: var(--gray-100);
+  text-decoration: none;
+}
+
+/* Hamburger — shown on mobile only */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  min-height: 44px;
+  min-width: 44px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburgerBar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--white);
+  border-radius: 1px;
+}
+
+/* Mobile menu */
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  background: var(--black);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-2) var(--space-3);
+  gap: var(--space-1);
+}
+
+.mobileMenu .navLink {
+  padding: 10px 0;
+  font-size: var(--text-base);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobileCreateBtn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--white);
+  background-color: var(--red);
+  padding: 10px 16px;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  margin: var(--space-1) 0;
+  min-height: 44px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .createBtn {
+    display: none;
+  }
+
+  .accountName,
+  .accountHandle,
+  .chevron {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+}
