@@ -58,7 +58,7 @@ cat .env
 
 Expected output:
 ```
-VITE_GOOGLE_PLACES_API_KEY=AIzaSyCh5xoCgQOm9Q6UOMhrAHWQTXOcarZsw_0
+VITE_GOOGLE_PLACES_API_KEY=your_google_places_api_key_here
 VITE_CHICAGO_DATA_PORTAL_TOKEN=
 ```
 
@@ -78,7 +78,7 @@ Run this curl command from your terminal to confirm the key is active:
 curl -s -X POST \
   "https://places.googleapis.com/v1/places:searchText" \
   -H "Content-Type: application/json" \
-  -H "X-Goog-Api-Key: AIzaSyCh5xoCgQOm9Q6UOMhrAHWQTXOcarZsw_0" \
+  -H "X-Goog-Api-Key: $VITE_GOOGLE_PLACES_API_KEY" \
   -H "X-Goog-FieldMask: places.displayName,places.formattedAddress" \
   -d '{"textQuery": "Kuma'\''s Corner Chicago", "locationBias": {"circle": {"center": {"latitude": 41.8781, "longitude": -87.6298}, "radius": 50000.0}}}' \
   | python3 -m json.tool
@@ -271,7 +271,7 @@ All tasks in this phase are appropriate for an agent to execute unless marked ot
 | 2.4 | Wire `AppProvider` into `main.jsx` and `BrowserRouter` into `App.jsx` | S | Agent |
 | 2.5 | Create all page stub components under `client/src/pages/` — each renders its route name as an `<h1>` | S | Agent |
 | 2.6 | Declare all routes in `App.jsx` in the exact order specified in requirements Section 6. Verify `/guide/new` is declared before `/guide/:id`. | S | Agent |
-| 2.7 | Build `Header.jsx` — wordmark, nav links, Create Guide CTA, account avatar dropdown with hardcoded Alex Rivera data | M | Agent |
+| 2.7 | Build `Header.jsx` — wordmark, nav links, Create Guide CTA, account avatar dropdown with hardcoded Alex Rivera data. **Note:** The Neighborhoods nav item is wired as a placeholder link in Phase 2; it is upgraded to a full community-area dropdown in task 8.8. | M | Agent |
 | 2.8 | Build `Footer.jsx` — flag stripes, links, tagline | S | Agent |
 | 2.9 | Build `Layout.jsx` wrapping `<Header>`, `{children}`, `<Footer>` with max-width container | S | Agent |
 | 2.10 | Implement the `/?reset=true` session reset URL parameter handler in `App.jsx` — dispatches `RESET_SESSION` action | M | Agent |
@@ -422,7 +422,8 @@ All tasks in this phase are appropriate for an agent to execute unless marked ot
 |---|------|-----------|-------------------|
 | 8.5 | Build `NeighborhoodCard.jsx` — compact neighborhood tile for the Explore grid | S | Agent |
 | 8.6 | Assemble `ExplorePage.jsx` — search bar **(implement as a local string filter over the neighborhood grid and guide cards — not a no-op, but also not an API call)**, "Browse by neighborhood" grid (all 77 areas), Trending guides (`isEditorsPick: true` guides), Newsroom rail | M | Agent |
-| 8.7 | **Git checkpoint:** `git add -A && git commit -m "Phase 8: profile and explore pages"` then `git push origin main` | S | Agent |
+| 8.8 | **Upgrade Neighborhoods nav dropdown in `Header.jsx`:** replace the Phase 2 placeholder link with a dropdown panel populated from `communityAreas` state. Each item links to `/neighborhood/:slug`. Dismiss on outside click or Escape. Mobile hamburger menu shows the list inline. | M | Agent |
+| 8.9 | **Git checkpoint:** `git add -A && git commit -m "Phase 8: profile, explore, and neighborhoods nav"` then `git push origin main` | S | Agent |
 
 ---
 
@@ -643,7 +644,7 @@ All components listed by page/feature area. For each: name, props interface, and
 **`Header`**
 ```typescript
 // Props: none (reads everything from AppContext)
-// AppContext: reads currentUser
+// AppContext: reads currentUser, communityAreas (for Neighborhoods dropdown)
 ```
 
 **`Footer`**
@@ -1263,7 +1264,7 @@ git push origin main
 
 For the **frontend service** (`chicago-com-frontend`), go to Variables and add:
 ```
-VITE_GOOGLE_PLACES_API_KEY=AIzaSyCh5xoCgQOm9Q6UOMhrAHWQTXOcarZsw_0
+VITE_GOOGLE_PLACES_API_KEY=your_google_places_api_key_here
 VITE_CHICAGO_DATA_PORTAL_TOKEN=your_socrata_token_here
 ```
 
@@ -1329,7 +1330,7 @@ If the file is missing, verify it is in `client/public/robots.txt` (Vite copies 
 This step must happen after the Railway URL is known and confirmed.
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com) → APIs & Services → Credentials.
-2. Click on the API key `AIzaSyCh5xoCgQOm9Q6UOMhrAHWQTXOcarZsw_0`.
+2. Click on the API key you use for this project.
 3. Under "Application restrictions," select **HTTP referrers (websites)**.
 4. Add these referrers:
    ```
