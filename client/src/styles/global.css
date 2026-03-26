@@ -1,0 +1,144 @@
+/* ============================================================
+   chicago.com — Design System Tokens & Global Styles
+   ============================================================ */
+
+/* --- Color Palette --- */
+:root {
+  --red: #EF002B;
+  --blue: #41B6E6;
+  --white: #FFFFFF;
+  --black: #161616;
+  --gray-100: #F5F5F5;
+  --gray-200: #E0E0E0;
+  --gray-500: #757575;
+  --gray-900: #212121;
+}
+
+/* --- Typography Scale --- */
+:root {
+  --font-display: 'Big Shoulders Display', sans-serif;
+  --font-heading: 'Big Shoulders Text', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-article: 'Source Serif 4', serif;
+
+  --text-xs: 0.75rem;   /* 12px */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-base: 1rem;    /* 16px */
+  --text-lg: 1.125rem;  /* 18px */
+  --text-xl: 1.25rem;   /* 20px */
+  --text-2xl: 1.5rem;   /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem;  /* 36px */
+  --text-5xl: 3rem;     /* 48px */
+}
+
+/* --- Spacing Scale (base 8px) --- */
+:root {
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+}
+
+/* --- Layout --- */
+:root {
+  --max-width: 1200px;
+  --breakpoint-mobile: 768px;
+  --border-radius: 2px;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--black);
+  background-color: var(--gray-100);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* --- Focus States (Accessibility) --- */
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+/* --- Typography Utilities --- */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-article {
+  font-family: var(--font-article);
+}
+
+.text-meta {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--gray-500);
+}
+
+/* --- Visually Hidden (Accessibility) --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

@@ -251,7 +251,7 @@ All tasks in this phase are appropriate for an agent to execute unless marked ot
 | 1.11 | Create `client/public/favicon.svg` as a Chicago six-pointed star SVG. **Note:** the Chicago flag star is six-pointed (Star of David geometry — two overlapping equilateral triangles), not the standard five-pointed star. The SVG must reflect this exactly. Use a regular hexagram path. | S | Agent |
 | 1.12 | Create `client/Caddyfile` at the root of the `client/` directory. This file is required for Railway to serve the SPA correctly — without it, every URL except `/` returns a 404 in production. Contents: `":80 { root * /app/dist\ntry_files {path} /index.html\nfile_server }"` | S | Agent |
 | 1.13 | Create `client/public/.env.example` — no, this goes at repo root. Verify `.env.example` exists at the repo root with `VITE_GOOGLE_PLACES_API_KEY=` and `VITE_CHICAGO_DATA_PORTAL_TOKEN=` (already created; verify it is committed and not in `.gitignore`) | S | Agent verify |
-| 1.14 | **DECISION REQUIRED (Ellery):** Review the typography specimen and color palette rendered in a simple test page before proceeding. Adjustments to type weights, sizes, or the exact red/blue values are much cheaper to make now than after 20+ components are built. To view: run `npm run dev` from the repo root, then open `http://localhost:5173` in your browser. You should see the design system specimen page. Tell the agent what to adjust, if anything, before proceeding. | — | Ellery review |
+| 1.14 | **DECISION REQUIRED (Ellery):** Review the typography specimen and color palette rendered in a simple test page before proceeding. Adjustments to type weights, sizes, or the exact red/blue values are much cheaper to make now than after 20+ components are built. To view: run `npm run dev` from the repo root, then open `http://localhost:5173` in your browser. You should see the design system specimen page. Tell the agent what to adjust, if anything, before proceeding. **Status: ✅ Approved by Ellery 2026-03-26 — no adjustments needed.** The specimen lives in `client/src/App.jsx` and is removed in task 2.4 when `App.jsx` is replaced with the real router shell. | — | Ellery review |
 | 1.15 | **Git checkpoint:** `git add -A && git commit -m "Phase 1: scaffold and design system"` then `git push origin main` | S | Agent |
 
 **Phase 1 blocks:** Every subsequent phase. Do not start Phase 2 until Phase 1.14 is signed off by Ellery.
@@ -264,6 +264,7 @@ All tasks in this phase are appropriate for an agent to execute unless marked ot
 
 | # | Task | Complexity | Agent or Decision |
 |---|------|-----------|-------------------|
+| 2.0 | **Remove design system specimen:** `client/src/App.jsx` currently renders the Phase 1 specimen page. This task is the first step of Phase 2 — replace `App.jsx` with a minimal shell (`<div>Phase 2 shell</div>`) so the specimen is gone before routing is wired in task 2.4. | S | Agent |
 | 2.1 | Install `react-router-dom` v6 | S | Agent |
 | 2.2 | Create `AppContext.jsx` and `AppReducer.js` using the full state shape defined in Section 4 of this plan | M | Agent |
 | 2.3 | Create `useAppContext.js` hook | S | Agent |

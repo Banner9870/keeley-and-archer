@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#EF002B">
+  <!--
+    Chicago six-pointed star (hexagram / Star of David geometry).
+    Two overlapping equilateral triangles, outer radius 10, centered at (12,12).
+    Triangle 1 (pointing up): vertices at 270°, 30°, 150° — (12,2), (20.66,17), (3.34,17)
+    Triangle 2 (pointing down): vertices at 90°, 210°, 330° — (12,22), (3.34,7), (20.66,7)
+  -->
+  <polygon points="12,2 20.66,17 3.34,17" />
+  <polygon points="12,22 3.34,7 20.66,7" />
+</svg>
