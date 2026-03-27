@@ -1,0 +1,51 @@
+.hero {
+  background-color: var(--black);
+  /* Break out of Layout container padding to span full width */
+  margin: calc(-1 * var(--space-4)) calc(-1 * var(--space-3)) var(--space-4);
+  overflow: hidden;
+}
+
+.stripe {
+  height: 10px;
+  background-color: var(--blue);
+}
+
+.content {
+  padding: var(--space-4) var(--space-3);
+  text-align: center;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.wordmarkText {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    margin: calc(-1 * var(--space-3)) calc(-1 * var(--space-2)) var(--space-3);
+  }
+
+  .wordmarkText {
+    font-size: var(--text-3xl);
+  }
+}

@@ -1,0 +1,52 @@
+.panel {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--space-2);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--black);
+  margin-bottom: var(--space-1);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 5px 12px;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: 99px;
+  cursor: pointer;
+  min-height: 30px;
+  transition: background-color 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.chip:hover {
+  background-color: var(--gray-200);
+  color: var(--black);
+}
+
+.active {
+  background-color: var(--black);
+  color: var(--white) !important;
+  border-color: var(--black);
+}
+
+.active:hover {
+  background-color: #333;
+  border-color: #333;
+}

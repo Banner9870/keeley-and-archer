@@ -1,0 +1,20 @@
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: rgba(65, 182, 230, 0.12);
+  color: #1a8ab5;
+  border: 1px solid rgba(65, 182, 230, 0.35);
+  border-radius: 99px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.12s ease;
+}
+
+.tag:hover {
+  background-color: rgba(65, 182, 230, 0.22);
+  text-decoration: none;
+}

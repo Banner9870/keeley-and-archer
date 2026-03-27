@@ -1,0 +1,135 @@
+.page {
+  /* No extra padding — FeedHero breaks out of container padding */
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.feedColumn {
+  min-width: 0; /* prevent grid blowout */
+}
+
+.feedHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.feedTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.feedList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* "From the Newsroom" group */
+.newsroomGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.newsroomHeader {
+  padding-left: var(--space-2);
+  border-left: 3px solid var(--blue);
+}
+
+.newsroomLabel {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Load more */
+.loadMoreRow {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.loadMoreBtn {
+  padding: 12px 32px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--black);
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  min-height: 44px;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.loadMoreBtn:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* Empty state */
+.emptyState {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  color: var(--gray-500);
+}
+
+.emptyState p {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-2);
+}
+
+.clearFiltersBtn {
+  padding: 10px 24px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--red);
+  background: none;
+  border: 1px solid var(--red);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.clearFiltersBtn:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  position: sticky;
+  top: var(--space-3);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    order: -1; /* sidebar above feed on mobile */
+  }
+}

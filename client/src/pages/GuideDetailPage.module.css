@@ -1,0 +1,214 @@
+.page {
+  /* No extra top padding — GuideHero breaks out of Layout container */
+}
+
+/* Action bar — below the hero author block */
+.actionBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--gray-200);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.actionGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--gray-500);
+  background: none;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  min-height: 40px;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.actionBtn:hover {
+  background-color: var(--gray-100);
+  color: var(--black);
+}
+
+.liked {
+  color: var(--red) !important;
+  border-color: var(--red) !important;
+}
+
+.saved {
+  color: var(--black) !important;
+}
+
+.remixBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--red);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  min-height: 44px;
+  white-space: nowrap;
+  transition: background-color 0.12s ease;
+}
+
+.remixBtn:hover {
+  background-color: #c8001f;
+  text-decoration: none;
+}
+
+/* Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.mainCol {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Description */
+.descriptionBlock {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--red);
+  padding: var(--space-3);
+  box-shadow: var(--card-shadow);
+}
+
+.description {
+  font-family: var(--font-article);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--black);
+  margin: 0;
+}
+
+/* Mobile map (hidden on desktop) */
+.mobileMap {
+  display: none;
+}
+
+/* Section heading */
+.sectionHeading {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--black);
+  margin: 0 0 var(--space-2) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.placeCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background-color: var(--red);
+  color: var(--white);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+/* Places list */
+.placesSection {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--space-3);
+}
+
+.placesList {
+  /* dividers handled by PlaceListItem */
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  position: sticky;
+  top: var(--space-3);
+}
+
+.statsBlock {
+  display: flex;
+  justify-content: space-around;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--space-3);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  color: var(--black);
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none; /* sidebar map hidden on mobile */
+  }
+
+  .mobileMap {
+    display: block; /* show map in main column on mobile */
+  }
+
+  .actionBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .remixBtn {
+    text-align: center;
+    justify-content: center;
+  }
+}

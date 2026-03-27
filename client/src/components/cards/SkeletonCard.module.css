@@ -1,0 +1,106 @@
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  border-top: 4px solid var(--gray-200);
+}
+
+.topBorder {
+  height: 4px;
+  background-color: var(--gray-200);
+}
+
+.body {
+  padding: var(--space-2);
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--gray-200) 25%,
+    #ececec 50%,
+    var(--gray-200) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: 3px;
+}
+
+/* Guide variant */
+.guide .imageArea {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0;
+}
+
+/* Article variant */
+.article {
+  border-top: none;
+}
+
+.article .body {
+  padding: var(--space-2);
+}
+
+.badgeLine {
+  width: 80px;
+  height: 14px;
+  margin-bottom: var(--space-1);
+}
+
+.titleLine {
+  width: 90%;
+  height: 20px;
+  margin-bottom: 6px;
+}
+
+.titleLineShort {
+  width: 65%;
+  height: 20px;
+  margin-bottom: var(--space-1);
+}
+
+.authorLine {
+  width: 55%;
+  height: 14px;
+  margin-bottom: 6px;
+}
+
+.summaryLine {
+  width: 100%;
+  height: 14px;
+  margin-bottom: 4px;
+}
+
+.metaLine {
+  width: 50%;
+  height: 12px;
+  margin-top: var(--space-1);
+}
+
+.actionRow {
+  display: flex;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--gray-200);
+}
+
+.actionBtn {
+  width: 56px;
+  height: 32px;
+  border-radius: var(--border-radius);
+}
+
+.remixBtn {
+  width: 90px;
+  height: 32px;
+  margin-left: auto;
+  border-radius: var(--border-radius);
+}

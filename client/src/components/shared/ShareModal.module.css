@@ -1,0 +1,129 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-2);
+}
+
+.modal {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: var(--space-4);
+  width: 100%;
+  max-width: 480px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--black);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--text-lg);
+  color: var(--gray-500);
+  padding: 4px;
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+}
+
+.closeBtn:hover {
+  background-color: var(--gray-100);
+  color: var(--black);
+}
+
+.description {
+  font-size: var(--text-sm);
+  color: var(--gray-500);
+  margin-bottom: var(--space-2);
+}
+
+.copyRow {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+
+.urlInput {
+  flex: 1;
+  padding: 10px var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--black);
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  outline: none;
+}
+
+.urlInput:focus {
+  border-color: var(--blue);
+}
+
+.copyBtn {
+  padding: 10px 20px;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+.copyBtn:hover {
+  background-color: #2ea0cf;
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.socialLabel {
+  font-size: var(--text-sm);
+  color: var(--gray-500);
+  margin-right: 4px;
+}
+
+.socialBtn {
+  padding: 6px 14px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--black);
+  background: none;
+  cursor: pointer;
+  min-height: 36px;
+}
+
+.socialBtn:hover {
+  background-color: var(--gray-100);
+}
