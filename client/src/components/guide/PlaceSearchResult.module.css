@@ -5,6 +5,7 @@
   gap: var(--space-2);
   padding: var(--space-2) 0;
   border-bottom: 1px solid var(--gray-200);
+  min-width: 0;
 }
 
 .row:last-child {
