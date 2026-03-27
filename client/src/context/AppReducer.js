@@ -1,8 +1,8 @@
 // ============================================================
 // AppReducer.js — all action handlers for AppContext
-// INITIAL_STATE.guides and .users are populated in Phase 3
-// when client/src/data/seed.js is created.
 // ============================================================
+
+import { seedGuides, seedUsers } from '../data/seed';
 
 const ALEX_RIVERA = {
   id: 'user-alex',
@@ -16,9 +16,9 @@ const ALEX_RIVERA = {
 };
 
 export const INITIAL_STATE = {
-  // Seed data — Phase 3 will replace [] with imports from seed.js
-  guides: [],
-  users: [],
+  // Seed data — loaded from client/src/data/seed.js
+  guides: seedGuides,
+  users: seedUsers,
 
   // Pre-loaded account (no auth in prototype)
   currentUser: ALEX_RIVERA,

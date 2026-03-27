@@ -1,0 +1,922 @@
+{
+  "place-001": {
+    "id": "place-001",
+    "placeId": "ChIJXf7SWBDSD4gRKY6ay-2qf1o",
+    "rating": 4.7,
+    "ratingCount": 1322,
+    "lat": 41.964182300000004,
+    "lng": -87.68551
+  },
+  "place-002": {
+    "id": "place-002",
+    "placeId": "ChIJ8_hetRrSD4gRyMWCxf_sWxc",
+    "rating": 4.7,
+    "ratingCount": 344,
+    "lat": 41.9670018,
+    "lng": -87.6878702
+  },
+  "place-003": {
+    "id": "place-003",
+    "placeId": "ChIJZbPnMwXSD4gRWl1Ug9SDcFk",
+    "rating": 4.4,
+    "ratingCount": 339,
+    "lat": 41.9673848,
+    "lng": -87.688205
+  },
+  "place-004": {
+    "id": "place-004",
+    "placeId": "ChIJ577XXffND4gRNk-_baT-A_U",
+    "rating": 4.7,
+    "ratingCount": 262,
+    "lat": 41.964216,
+    "lng": -87.686021
+  },
+  "place-005": {
+    "id": "place-005",
+    "placeId": "ChIJkSl-lArSD4gRFIS04bEWHIs",
+    "rating": 4.6,
+    "ratingCount": 1709,
+    "lat": 41.957799699999995,
+    "lng": -87.69637209999999
+  },
+  "place-006": {
+    "id": "place-006",
+    "placeId": "ChIJSZad6mrSD4gRDTQC9njhtLo",
+    "rating": 4.2,
+    "ratingCount": 5,
+    "lat": 41.9544803,
+    "lng": -87.6792694
+  },
+  "place-007": {
+    "id": "place-007",
+    "placeId": "ChIJZbPnMwXSD4gRWl1Ug9SDcFk",
+    "rating": 4.4,
+    "ratingCount": 339,
+    "lat": 41.9673848,
+    "lng": -87.688205
+  },
+  "place-008": {
+    "id": "place-008",
+    "placeId": "ChIJNX-6nwjSD4gRrMdXmAmLVN8",
+    "rating": 4.5,
+    "ratingCount": 871,
+    "lat": 41.9658519,
+    "lng": -87.6938468
+  },
+  "place-009": {
+    "id": "place-009",
+    "placeId": "ChIJ577XXffND4gR_vzsmI8D7wg",
+    "rating": 4.7,
+    "ratingCount": 767,
+    "lat": 41.963603899999995,
+    "lng": -87.685707
+  },
+  "place-010": {
+    "id": "place-010",
+    "placeId": "ChIJ_aJobfTRD4gRegv9Ifo5RXo",
+    "rating": 4.6,
+    "ratingCount": 621,
+    "lat": 41.980193,
+    "lng": -87.681371
+  },
+  "place-011": {
+    "id": "place-011",
+    "placeId": "ChIJ-7r5qHrND4gRgmIpiTEL5Nk",
+    "rating": 4.7,
+    "ratingCount": 3524,
+    "lat": 41.9276583,
+    "lng": -87.7067917
+  },
+  "place-012": {
+    "id": "place-012",
+    "placeId": "ChIJI5rtf5fSD4gR5Tpby4T8Gyg",
+    "rating": 4.4,
+    "ratingCount": 196,
+    "lat": 41.9188293,
+    "lng": -87.6876941
+  },
+  "place-013": {
+    "id": "place-013",
+    "placeId": "ChIJt6mzLZ7SD4gR8bpjii62t_Q",
+    "rating": 4.6,
+    "ratingCount": 1746,
+    "lat": 41.9190185,
+    "lng": -87.69711219999999
+  },
+  "place-014": {
+    "id": "place-014",
+    "placeId": "ChIJz29MdHrND4gR5pq83uUZbVo",
+    "rating": 4.6,
+    "ratingCount": 2946,
+    "lat": 41.930085299999995,
+    "lng": -87.7071462
+  },
+  "place-015": {
+    "id": "place-015",
+    "placeId": "ChIJMbRTOnvND4gRrup6n88Rwa4",
+    "rating": 4.4,
+    "ratingCount": 1350,
+    "lat": 41.9244424,
+    "lng": -87.69961479999999
+  },
+  "place-016": {
+    "id": "place-016",
+    "placeId": "ChIJt6mzLZ7SD4gR8bpjii62t_Q",
+    "rating": 4.6,
+    "ratingCount": 1746,
+    "lat": 41.9190185,
+    "lng": -87.69711219999999
+  },
+  "place-017": {
+    "id": "place-017",
+    "placeId": "ChIJn5fXhWbND4gRqWBoRO6T-Qk",
+    "rating": 4.7,
+    "ratingCount": 966,
+    "lat": 41.9210378,
+    "lng": -87.70463029999999
+  },
+  "place-018": {
+    "id": "place-018",
+    "placeId": "ChIJo9vg5XrND4gR8LLYtKiLXJM",
+    "rating": 4.6,
+    "ratingCount": 747,
+    "lat": 41.9277643,
+    "lng": -87.7067884
+  },
+  "place-019": {
+    "id": "place-019",
+    "placeId": "ChIJzZwmlGTND4gRJP8HFkLWPkY",
+    "rating": 4.5,
+    "ratingCount": 172,
+    "lat": 41.9250803,
+    "lng": -87.7036
+  },
+  "place-020": {
+    "id": "place-020",
+    "placeId": "ChIJsTi-rKAtDogRx9MnUyQcC7Q",
+    "rating": 4.8,
+    "ratingCount": 3659,
+    "lat": 41.855979000000005,
+    "lng": -87.67280099999999
+  },
+  "place-021": {
+    "id": "place-021",
+    "placeId": "ChIJIbdi2_8sDogRNs8JXduUSpo",
+    "rating": 4.7,
+    "ratingCount": 3661,
+    "lat": 41.857717,
+    "lng": -87.657459
+  },
+  "place-022": {
+    "id": "place-022",
+    "placeId": "ChIJR_jWKP8sDogRi1KFs7MIzcI",
+    "rating": 4.6,
+    "ratingCount": 497,
+    "lat": 41.8576214,
+    "lng": -87.6650204
+  },
+  "place-023": {
+    "id": "place-023",
+    "placeId": "ChIJTW33Mf8sDogRiUnjYL3R_ck",
+    "rating": 4.4,
+    "ratingCount": 1137,
+    "lat": 41.8578927,
+    "lng": -87.6533712
+  },
+  "place-024": {
+    "id": "place-024",
+    "placeId": "ChIJEyjq8tssDogRJgkXeqAneH0",
+    "rating": 4.8,
+    "ratingCount": 192,
+    "lat": 41.8357083,
+    "lng": -87.6508278
+  },
+  "place-025": {
+    "id": "place-025",
+    "placeId": "ChIJx6Y33fgsDogRpo1IaeEY9EA",
+    "rating": 4.5,
+    "ratingCount": 394,
+    "lat": 41.8578896,
+    "lng": -87.6520424
+  },
+  "place-026": {
+    "id": "place-026",
+    "placeId": "ChIJIbdi2_8sDogRNs8JXduUSpo",
+    "rating": 4.7,
+    "ratingCount": 3661,
+    "lat": 41.857717,
+    "lng": -87.657459
+  },
+  "place-027": {
+    "id": "place-027",
+    "placeId": "ChIJW6QQ2_8sDogR44KnEXNbBts",
+    "rating": 4.4,
+    "ratingCount": 1243,
+    "lat": 41.857800000000005,
+    "lng": -87.6574472
+  },
+  "place-028": {
+    "id": "place-028",
+    "placeId": "ChIJTW33Mf8sDogRiUnjYL3R_ck",
+    "rating": 4.4,
+    "ratingCount": 1137,
+    "lat": 41.8578927,
+    "lng": -87.6533712
+  },
+  "place-029": {
+    "id": "place-029",
+    "placeId": "ChIJubIDU1gsDogRY_FcQAkGRYU",
+    "rating": 4.4,
+    "ratingCount": 35,
+    "lat": 41.8535803,
+    "lng": -87.6462214
+  },
+  "place-030": {
+    "id": "place-030",
+    "placeId": "ChIJuywNsFksDogRfajNADmCRIA",
+    "rating": 4.6,
+    "ratingCount": 841,
+    "lat": 41.8527778,
+    "lng": -87.64638889999999
+  },
+  "place-031": {
+    "id": "place-031",
+    "placeId": "ChIJD-HYxj8pDogRkTSO4p_4YBw",
+    "rating": 4.5,
+    "ratingCount": 441,
+    "lat": 41.7935717,
+    "lng": -87.6001981
+  },
+  "place-032": {
+    "id": "place-032",
+    "placeId": "ChIJm7uKDRQpDogRlOmMbUxYtz0",
+    "rating": 4.8,
+    "ratingCount": 549,
+    "lat": 41.7911818,
+    "lng": -87.5946742
+  },
+  "place-033": {
+    "id": "place-033",
+    "placeId": "ChIJE4Eh9BMpDogRUeTqOGZo8bc",
+    "rating": 4.4,
+    "ratingCount": 3178,
+    "lat": 41.791275999999996,
+    "lng": -87.5937569
+  },
+  "place-034": {
+    "id": "place-034",
+    "placeId": "ChIJcbCRDZ8pDogRQOBEpBkxw0w",
+    "rating": 4.8,
+    "ratingCount": 1732,
+    "lat": 41.795998999999995,
+    "lng": -87.57700229999999
+  },
+  "place-035": {
+    "id": "place-035",
+    "placeId": "ChIJz61oh3ApDogRea29Mt7nyjM",
+    "rating": 4.7,
+    "ratingCount": 393,
+    "lat": 41.8037291,
+    "lng": -87.58676419999999
+  },
+  "place-036": {
+    "id": "place-036",
+    "placeId": "ChIJwx63BHIpDogRd9-Kwp9TAj8",
+    "rating": 4.5,
+    "ratingCount": 2586,
+    "lat": 41.799768300000004,
+    "lng": -87.58831719999999
+  },
+  "place-037": {
+    "id": "place-037",
+    "placeId": "ChIJ69_oRgcpDogRbMp0Svo9ogg",
+    "rating": 4.6,
+    "ratingCount": 7513,
+    "lat": 41.7808551,
+    "lng": -87.5801615
+  },
+  "place-038": {
+    "id": "place-038",
+    "placeId": "ChIJbQDewAgpDogRDmPBKJUinf0",
+    "rating": 4.7,
+    "ratingCount": 1223,
+    "lat": 41.786349799999996,
+    "lng": -87.5827462
+  },
+  "place-039": {
+    "id": "place-039",
+    "placeId": "ChIJ60MasjUpDogRTog3uQ48ISc",
+    "rating": 4.5,
+    "ratingCount": 3739,
+    "lat": 41.7957052,
+    "lng": -87.610755
+  },
+  "place-040": {
+    "id": "place-040",
+    "placeId": "ChIJG4eICRcpDogRmkHfjIgToAc",
+    "rating": 4.6,
+    "ratingCount": 832,
+    "lat": 41.7868907,
+    "lng": -87.593919
+  },
+  "place-041": {
+    "id": "place-041",
+    "placeId": "ChIJnSEVG8fSD4gRJ0ib4UtxuVM",
+    "rating": 4.6,
+    "ratingCount": 1368,
+    "lat": 41.907068599999995,
+    "lng": -87.6718298
+  },
+  "place-042": {
+    "id": "place-042",
+    "placeId": "ChIJxzT90cbSD4gRjGjQu1aTCDk",
+    "rating": 4.7,
+    "ratingCount": 468,
+    "lat": 41.910717999999996,
+    "lng": -87.674763
+  },
+  "place-043": {
+    "id": "place-043",
+    "placeId": "ChIJR-BMErLSD4gRFUV3e3FwXEo",
+    "rating": 4.7,
+    "ratingCount": 1568,
+    "lat": 41.9004139,
+    "lng": -87.6867377
+  },
+  "place-044": {
+    "id": "place-044",
+    "placeId": "ChIJne-d28nSD4gRea659m_EFkQ",
+    "rating": 4.6,
+    "ratingCount": 369,
+    "lat": 41.9027654,
+    "lng": -87.6774691
+  },
+  "place-045": {
+    "id": "place-045",
+    "placeId": "ChIJfWmJOsfSD4gRVMPC4R4Q10w",
+    "rating": 4.5,
+    "ratingCount": 2812,
+    "lat": 41.9103042,
+    "lng": -87.6761289
+  },
+  "place-046": {
+    "id": "place-046",
+    "placeId": "ChIJj_WHnaUsDogRLVVNKF7LxhY",
+    "rating": 4.3,
+    "ratingCount": 2043,
+    "lat": 41.884282999999996,
+    "lng": -87.62577519999999
+  },
+  "place-047": {
+    "id": "place-047",
+    "placeId": "ChIJY473WcbSD4gRUo5DhCPezNs",
+    "rating": 4.6,
+    "ratingCount": 2056,
+    "lat": 41.9084133,
+    "lng": -87.6746028
+  },
+  "place-048": {
+    "id": "place-048",
+    "placeId": "ChIJ7VDy2r3SD4gRo7aJ8aaxQ1w",
+    "rating": 4.5,
+    "ratingCount": 1133,
+    "lat": 41.9144273,
+    "lng": -87.68326069999999
+  },
+  "place-049": {
+    "id": "place-049",
+    "placeId": "ChIJESvtKSvTD4gRR1nXPNiU_po",
+    "rating": 4.6,
+    "ratingCount": 399,
+    "lat": 41.896059,
+    "lng": -87.6555523
+  },
+  "place-050": {
+    "id": "place-050",
+    "placeId": "ChIJ-aXZClMpDogR6CEtQdYEUVQ",
+    "rating": 4.4,
+    "ratingCount": 609,
+    "lat": 41.8092013,
+    "lng": -87.6161234
+  },
+  "place-051": {
+    "id": "place-051",
+    "placeId": "ChIJc2KLljkpDogRda8AsGdVjcA",
+    "rating": 4.7,
+    "ratingCount": 2101,
+    "lat": 41.7919444,
+    "lng": -87.6072222
+  },
+  "place-052": {
+    "id": "place-052",
+    "placeId": "ChIJLZ2WbDwpDogR2A7JbXKusW8",
+    "rating": 4.4,
+    "ratingCount": 591,
+    "lat": 41.8142125,
+    "lng": -87.6069522
+  },
+  "place-053": {
+    "id": "place-053",
+    "placeId": "ChIJFR-hWQ4sDogRihRqtZxWVag",
+    "rating": 4.5,
+    "ratingCount": 2,
+    "lat": 41.8289847,
+    "lng": -87.6262981
+  },
+  "place-054": {
+    "id": "place-054",
+    "placeId": "ChIJPbHv7wksDogRIwicy7miBu8",
+    "rating": 3,
+    "ratingCount": 2,
+    "lat": 41.8303897,
+    "lng": -87.6191589
+  },
+  "place-055": {
+    "id": "place-055",
+    "placeId": "ChIJDXNHBQAvDogRfxazpYiI3h8",
+    "rating": null,
+    "ratingCount": null,
+    "lat": 41.802278,
+    "lng": -87.6189069
+  },
+  "place-056": {
+    "id": "place-056",
+    "placeId": "ChIJETiNqw8sDogRLong0r-WULc",
+    "rating": 4.6,
+    "ratingCount": 59,
+    "lat": 41.8280002,
+    "lng": -87.6261676
+  },
+  "place-057": {
+    "id": "place-057",
+    "placeId": "ChIJDXNHBQAvDogRfxazpYiI3h8",
+    "rating": null,
+    "ratingCount": null,
+    "lat": 41.802278,
+    "lng": -87.6189069
+  },
+  "place-058": {
+    "id": "place-058",
+    "placeId": "ChIJ8VxpYgYsDogRc_7sVgLy9Tk",
+    "rating": 4.1,
+    "ratingCount": 3692,
+    "lat": 41.823586299999995,
+    "lng": -87.62277739999999
+  },
+  "place-059": {
+    "id": "place-059",
+    "placeId": "ChIJ_0VX-vgrDogRnZLnFyFz2DE",
+    "rating": 4.1,
+    "ratingCount": 4262,
+    "lat": 41.822467599999996,
+    "lng": -87.6165202
+  },
+  "place-060": {
+    "id": "place-060",
+    "placeId": "ChIJDd94KucpDogRQCn5RS4C55I",
+    "rating": 3,
+    "ratingCount": 147,
+    "lat": 41.809213899999996,
+    "lng": -87.613624
+  },
+  "place-061": {
+    "id": "place-061",
+    "placeId": "ChIJaw3BlaQoDogR4_xd4HMegFQ",
+    "rating": 4.5,
+    "ratingCount": 1921,
+    "lat": 41.74437340000001,
+    "lng": -87.6048401
+  },
+  "place-062": {
+    "id": "place-062",
+    "placeId": "ChIJww-SCojRD4gRySzeS17Qlxs",
+    "rating": 4.6,
+    "ratingCount": 3098,
+    "lat": 41.939767599999996,
+    "lng": -87.6520178
+  },
+  "place-063": {
+    "id": "place-063",
+    "placeId": "ChIJbR8_2PnRD4gRTXjaq2nW_h0",
+    "rating": 4.6,
+    "ratingCount": 1636,
+    "lat": 41.9762959,
+    "lng": -87.6689136
+  },
+  "place-064": {
+    "id": "place-064",
+    "placeId": "ChIJs5ooE4jRD4gRZzun7D0FyLU",
+    "rating": 4.6,
+    "ratingCount": 629,
+    "lat": 41.9765833,
+    "lng": -87.66869439999999
+  },
+  "place-065": {
+    "id": "place-065",
+    "placeId": "ChIJMUDxeYjRD4gRh1bbcmwiPgE",
+    "rating": 4.8,
+    "ratingCount": 836,
+    "lat": 41.9772222,
+    "lng": -87.6682417
+  },
+  "place-066": {
+    "id": "place-066",
+    "placeId": "ChIJ7VJ-b4jRD4gRqSv4jB9HO38",
+    "rating": 4.5,
+    "ratingCount": 518,
+    "lat": 41.9773034,
+    "lng": -87.6685165
+  },
+  "place-067": {
+    "id": "place-067",
+    "placeId": "ChIJe19TdGEsDogRnqHzxT0P3PU",
+    "rating": 4.3,
+    "ratingCount": 8292,
+    "lat": 41.8533234,
+    "lng": -87.6348227
+  },
+  "place-068": {
+    "id": "place-068",
+    "placeId": "ChIJMaWLcmIsDogR7d-87VAKkbQ",
+    "rating": 4.6,
+    "ratingCount": 3178,
+    "lat": 41.8551711,
+    "lng": -87.6319894
+  },
+  "place-069": {
+    "id": "place-069",
+    "placeId": "ChIJrUT51-42DogRT17cptjh1Vo",
+    "rating": 4.2,
+    "ratingCount": 1673,
+    "lat": 41.8536197,
+    "lng": -87.6329552
+  },
+  "place-070": {
+    "id": "place-070",
+    "placeId": "ChIJO6zZFGIsDogRKg7hOVW1dKw",
+    "rating": 4,
+    "ratingCount": 1298,
+    "lat": 41.8545544,
+    "lng": -87.6322747
+  },
+  "place-071": {
+    "id": "place-071",
+    "placeId": "ChIJXwlAkmEsDogRJPkGfe3Sh5w",
+    "rating": 4.3,
+    "ratingCount": 852,
+    "lat": 41.8528392,
+    "lng": -87.6338966
+  },
+  "place-072": {
+    "id": "place-072",
+    "placeId": "ChIJuwkmHgAtDogRi6JmgGt2W-o",
+    "rating": 5,
+    "ratingCount": 9,
+    "lat": 41.8498984,
+    "lng": -87.6317925
+  },
+  "place-073": {
+    "id": "place-073",
+    "placeId": "ChIJX-RTBqksDogRRh_Q4ynbf_8",
+    "rating": 4.8,
+    "ratingCount": 22057,
+    "lat": 41.8884689,
+    "lng": -87.6232295
+  },
+  "place-074": {
+    "id": "place-074",
+    "placeId": "ChIJlUbZ4qMsDogR3tCinMzzKUg",
+    "rating": 4.8,
+    "ratingCount": 37547,
+    "lat": 41.8796031,
+    "lng": -87.6223504
+  },
+  "place-075": {
+    "id": "place-075",
+    "placeId": "ChIJ9-25gKYsDogRWBT2lu-OSi0",
+    "rating": null,
+    "ratingCount": null,
+    "lat": 41.8825003,
+    "lng": -87.6233417
+  },
+  "place-076": {
+    "id": "place-076",
+    "placeId": "ChIJH58hH6wsDogRMwsr0TdEj4U",
+    "rating": 4.5,
+    "ratingCount": 5701,
+    "lat": 41.8903294,
+    "lng": -87.6246338
+  },
+  "place-077": {
+    "id": "place-077",
+    "placeId": "ChIJJU3B3UsoDogRfuJA0UmE15A",
+    "rating": 4.6,
+    "ratingCount": 2266,
+    "lat": 41.7684565,
+    "lng": -87.5636858
+  },
+  "place-078": {
+    "id": "place-078",
+    "placeId": "ChIJ04tPhR4wDogRRWMqZ6Z0_Vc",
+    "rating": 4.4,
+    "ratingCount": 2503,
+    "lat": 41.757029,
+    "lng": -87.55018899999999
+  },
+  "place-079": {
+    "id": "place-079",
+    "placeId": "ChIJT-EgElcoDogR9yTTuYIFrkM",
+    "rating": 3.9,
+    "ratingCount": 302,
+    "lat": 41.7667534,
+    "lng": -87.57608239999999
+  },
+  "place-080": {
+    "id": "place-080",
+    "placeId": "ChIJ8VHpMbYtDogRVGmALh_zuE4",
+    "rating": 3.9,
+    "ratingCount": 45,
+    "lat": 41.867596899999995,
+    "lng": -87.6420363
+  },
+  "place-081": {
+    "id": "place-081",
+    "placeId": "ChIJbfW260goDogRhTn7Gq3nUvw",
+    "rating": 3.7,
+    "ratingCount": 51,
+    "lat": 41.7661425,
+    "lng": -87.5629053
+  },
+  "place-082": {
+    "id": "place-082",
+    "placeId": "ChIJx8d5g2vND4gRP3AURNWCiXE",
+    "rating": null,
+    "ratingCount": null,
+    "lat": 41.902645899999996,
+    "lng": -87.70190679999999
+  },
+  "place-083": {
+    "id": "place-083",
+    "placeId": "ChIJRQvV4bMxDogR8pIlCLVaJSQ",
+    "rating": 4.3,
+    "ratingCount": 1104,
+    "lat": 41.7829025,
+    "lng": -87.72314229999999
+  },
+  "place-084": {
+    "id": "place-084",
+    "placeId": "ChIJVwNwO6nSD4gRW_mVhpN4_RY",
+    "rating": 4.7,
+    "ratingCount": 920,
+    "lat": 41.9032546,
+    "lng": -87.69352049999999
+  },
+  "place-085": {
+    "id": "place-085",
+    "placeId": "ChIJm9j53VnND4gRb4tAZ7l_oSM",
+    "rating": 4.8,
+    "ratingCount": 39,
+    "lat": 41.935593,
+    "lng": -87.7171455
+  },
+  "place-086": {
+    "id": "place-086",
+    "placeId": "ChIJD77_d27ND4gRidX5DsuU84I",
+    "rating": 4.5,
+    "ratingCount": 5448,
+    "lat": 41.9248161,
+    "lng": -87.7122564
+  },
+  "place-087": {
+    "id": "place-087",
+    "placeId": "ChIJvdSx1kwtDogRVx4fJYVD9dQ",
+    "rating": 4.8,
+    "ratingCount": 126,
+    "lat": 41.8959755,
+    "lng": -87.6850654
+  },
+  "place-088": {
+    "id": "place-088",
+    "placeId": "ChIJHao_JlMtDogRXh-oorEUqIc",
+    "rating": 4.8,
+    "ratingCount": 703,
+    "lat": 41.8958553,
+    "lng": -87.69037580000001
+  },
+  "place-089": {
+    "id": "place-089",
+    "placeId": "ChIJlSdbcbLSD4gRx8v43uAT3Cc",
+    "rating": 4.6,
+    "ratingCount": 852,
+    "lat": 41.899856199999995,
+    "lng": -87.6872841
+  },
+  "place-090": {
+    "id": "place-090",
+    "placeId": "ChIJ1zBu2s7SD4gRDBtACyteyMQ",
+    "rating": 4.2,
+    "ratingCount": 96,
+    "lat": 41.9031112,
+    "lng": -87.6722346
+  },
+  "place-091": {
+    "id": "place-091",
+    "placeId": "ChIJ5ywykizSD4gRX8IVtWSf3OI",
+    "rating": 4.3,
+    "ratingCount": 4532,
+    "lat": 41.9692028,
+    "lng": -87.6599222
+  },
+  "place-092": {
+    "id": "place-092",
+    "placeId": "ChIJ6Y3hStPTD4gR_LWOu56fyDA",
+    "rating": 4.1,
+    "ratingCount": 5758,
+    "lat": 41.969149,
+    "lng": -87.6580233
+  },
+  "place-093": {
+    "id": "place-093",
+    "placeId": "ChIJs7gF7izSD4gRcZVts1O394c",
+    "rating": 4.2,
+    "ratingCount": 3025,
+    "lat": 41.9685825,
+    "lng": -87.6598602
+  },
+  "place-094": {
+    "id": "place-094",
+    "placeId": "ChIJTVle-sbSD4gRnXE7zWH7kkU",
+    "rating": 3.6,
+    "ratingCount": 85,
+    "lat": 41.9089755,
+    "lng": -87.674965
+  },
+  "place-095": {
+    "id": "place-095",
+    "placeId": "ChIJLwPlvy_SD4gRqEJ181lAUhQ",
+    "rating": 4.6,
+    "ratingCount": 744,
+    "lat": 41.966915199999995,
+    "lng": -87.6669024
+  },
+  "place-096": {
+    "id": "place-096",
+    "placeId": "ChIJ13VBl9XTD4gRHuT8GYhnQhk",
+    "rating": 4.6,
+    "ratingCount": 801,
+    "lat": 41.9740414,
+    "lng": -87.65521869999999
+  },
+  "place-097": {
+    "id": "place-097",
+    "placeId": "ChIJdXNg86nRD4gR1-hJ2H9Q2a4",
+    "rating": 4.6,
+    "ratingCount": 1535,
+    "lat": 42.0117116,
+    "lng": -87.66190759999999
+  },
+  "place-098": {
+    "id": "place-098",
+    "placeId": "ChIJ8UwgaK7RD4gRWe6hMB0Qpsw",
+    "rating": 4.8,
+    "ratingCount": 10,
+    "lat": 42.008722899999995,
+    "lng": -87.66630599999999
+  },
+  "place-099": {
+    "id": "place-099",
+    "placeId": "ChIJ94vKEIjRD4gRtal_nwKKwqY",
+    "rating": 4.8,
+    "ratingCount": 1080,
+    "lat": 41.9760037,
+    "lng": -87.66872459999999
+  },
+  "place-100": {
+    "id": "place-100",
+    "placeId": "ChIJ34Omb67RD4gRlc7Lot7-tLQ",
+    "rating": 4.1,
+    "ratingCount": 95,
+    "lat": 42.0092833,
+    "lng": -87.6663662
+  },
+  "place-101": {
+    "id": "place-101",
+    "placeId": "ChIJpZyqbfEtDogRTFY2tUUN1Vk",
+    "rating": 4.2,
+    "ratingCount": 315,
+    "lat": 41.844400199999995,
+    "lng": -87.7070921
+  },
+  "place-102": {
+    "id": "place-102",
+    "placeId": "ChIJ3R3qJnEyDogR5mJZelrgTMk",
+    "rating": 4.2,
+    "ratingCount": 509,
+    "lat": 41.8429435,
+    "lng": -87.7026073
+  },
+  "place-103": {
+    "id": "place-103",
+    "placeId": "ChIJhe1g3WjtD4gRR1asieV7kS8",
+    "rating": 4.2,
+    "ratingCount": 2246,
+    "lat": 41.851976199999996,
+    "lng": -87.696861
+  },
+  "place-104": {
+    "id": "place-104",
+    "placeId": "ChIJ9eemRwgtDogR_EsmnDF1M4E",
+    "rating": 4.6,
+    "ratingCount": 2858,
+    "lat": 41.8575813,
+    "lng": -87.6696819
+  },
+  "place-105": {
+    "id": "place-105",
+    "placeId": "ChIJlXn-QpszDogREHWN3NzDa8s",
+    "rating": 4.5,
+    "ratingCount": 50,
+    "lat": 41.8446591,
+    "lng": -87.7079672
+  },
+  "place-106": {
+    "id": "place-106",
+    "placeId": "ChIJdQBzqFMpDogRblcUhYQDPu0",
+    "rating": 4.6,
+    "ratingCount": 2330,
+    "lat": 41.7996669,
+    "lng": -87.58925149999999
+  },
+  "place-107": {
+    "id": "place-107",
+    "placeId": "ChIJbYT_03QpDogRrGQBzB5NuYA",
+    "rating": 4.3,
+    "ratingCount": 418,
+    "lat": 41.7953629,
+    "lng": -87.5819011
+  },
+  "place-108": {
+    "id": "place-108",
+    "placeId": "ChIJfyRb9XEpDogR0eyH-ItYsAI",
+    "rating": 4.2,
+    "ratingCount": 71,
+    "lat": 41.7998982,
+    "lng": -87.58780750000001
+  },
+  "place-109": {
+    "id": "place-109",
+    "placeId": "ChIJh3NjkxopDogRBkkhjgL5KW0",
+    "rating": 4.6,
+    "ratingCount": 225,
+    "lat": 41.7840698,
+    "lng": -87.5903891
+  },
+  "place-110": {
+    "id": "place-110",
+    "placeId": "ChIJ34ZleBwpDogRHNM97AxEL-k",
+    "rating": 4.7,
+    "ratingCount": 603,
+    "lat": 41.7793398,
+    "lng": -87.59240510000001
+  },
+  "place-111": {
+    "id": "place-111",
+    "placeId": "ChIJ-aXZClMpDogR6CEtQdYEUVQ",
+    "rating": 4.4,
+    "ratingCount": 609,
+    "lat": 41.8092013,
+    "lng": -87.6161234
+  },
+  "place-112": {
+    "id": "place-112",
+    "placeId": "ChIJLZ2WbDwpDogR2A7JbXKusW8",
+    "rating": 4.4,
+    "ratingCount": 591,
+    "lat": 41.8142125,
+    "lng": -87.6069522
+  },
+  "place-113": {
+    "id": "place-113",
+    "placeId": "ChIJx2ywOnIpDogRml0FxS9Snlw",
+    "rating": 4.4,
+    "ratingCount": 2732,
+    "lat": 41.799005099999995,
+    "lng": -87.58760769999999
+  },
+  "place-114": {
+    "id": "place-114",
+    "placeId": "ChIJ8VxpYgYsDogRc_7sVgLy9Tk",
+    "rating": 4.1,
+    "ratingCount": 3692,
+    "lat": 41.823586299999995,
+    "lng": -87.62277739999999
+  },
+  "place-115": {
+    "id": "place-115",
+    "placeId": "ChIJW5ZGMTzSD4gRh_kGh5rfZvs",
+    "rating": 4.7,
+    "ratingCount": 581,
+    "lat": 41.9616281,
+    "lng": -87.67502499999999
+  }
+}
