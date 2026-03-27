@@ -8,7 +8,7 @@
 export const unsplashPhotos = [
   // Chicago skyline / architecture (5)
   { id: 'arch-1', url: 'https://picsum.photos/seed/chicago-skyline/800/500', alt: 'Chicago skyline at night' },
-  { id: 'arch-2', url: 'https://picsum.photos/seed/chicago-architecture/800/500', alt: 'Chicago architecture along the river' },
+  { id: 'arch-2', url: 'https://picsum.photos/seed/chicago-loop-elevated/800/500', alt: 'Chicago elevated train and urban buildings' },
   { id: 'arch-3', url: 'https://picsum.photos/seed/chicago-downtown/800/500', alt: 'Downtown Chicago buildings' },
   { id: 'arch-4', url: 'https://picsum.photos/seed/chicago-riverwalk/800/500', alt: 'Chicago River and bridges' },
   { id: 'arch-5', url: 'https://picsum.photos/seed/chicago-bridge/800/500', alt: 'Chicago bridge and waterway' },
