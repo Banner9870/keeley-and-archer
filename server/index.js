@@ -68,8 +68,11 @@ const RSS_SOURCES = {
 const xmlParser = new XMLParser({
   ignoreAttributes: false,
   attributeNamePrefix: '@_',
-  // Ensure items are always an array even when there is only one.
-  isArray: (name) => name === 'item',
+  // Ensure feed items are always arrays even when there is only one.
+  isArray: (name) => name === 'item' || name === 'entry',
+  // Disable built-in entity expansion — Sun-Times and WBEZ feeds exceed
+  // the default limit of 1000. We decode common entities manually below.
+  processEntities: false,
 });
 
 // ── Helpers ───────────────────────────────────────────────────
@@ -85,11 +88,31 @@ function tagNeighborhoods(text) {
     .map(({ name }) => name);
 }
 
+// Common HTML/XML entities — needed because processEntities: false skips
+// built-in decoding to avoid the entity expansion limit error.
+const ENTITY_MAP = {
+  '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"',
+  '&apos;': "'", '&nbsp;': ' ', '&mdash;': '—', '&ndash;': '–',
+  '&lsquo;': '\u2018', '&rsquo;': '\u2019',
+  '&ldquo;': '\u201C', '&rdquo;': '\u201D',
+  '&hellip;': '…', '&copy;': '©', '&reg;': '®',
+};
+
+function decodeEntities(str) {
+  return (str || '')
+    // Named entities from the map above
+    .replace(/&[a-z]+;/gi, match => ENTITY_MAP[match] ?? match)
+    // Decimal numeric entities e.g. &#8217;
+    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(parseInt(code, 10)))
+    // Hex numeric entities e.g. &#x2019;
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCharCode(parseInt(hex, 16)));
+}
+
 /**
  * Strip HTML tags from a string (RSS descriptions often contain markup).
  */
 function stripHtml(html) {
-  return (html || '').replace(/<[^>]+>/g, '').trim();
+  return decodeEntities((html || '').replace(/<[^>]+>/g, '')).trim();
 }
 
 /**
@@ -130,22 +153,70 @@ function estimateReadTime(text) {
 }
 
 /**
- * Normalize a raw RSS item into the app's article shape:
+ * Extract a plain string from a value that may be a string or an Atom
+ * element object like { '#text': 'Hello', '@_type': 'html' }.
+ */
+function textValue(val) {
+  if (!val) return '';
+  if (typeof val === 'string') return val;
+  if (typeof val === 'object') return val['#text'] || val['_'] || '';
+  return String(val);
+}
+
+/**
+ * Extract the article URL from an item.
+ * RSS 2.0: <link> is a plain text node.
+ * Atom:    <link> is an element with href attribute — may be an object
+ *          or an array of link objects (alternate, self, etc.).
+ */
+function extractUrl(item) {
+  const link = item.link;
+
+  if (!link) return textValue(item.guid) || '';
+
+  // Plain string (RSS 2.0)
+  if (typeof link === 'string') return link;
+
+  // Single Atom <link href="..."> object
+  if (typeof link === 'object' && !Array.isArray(link)) {
+    return link['@_href'] || textValue(link) || '';
+  }
+
+  // Array of Atom <link> elements — prefer rel="alternate"
+  if (Array.isArray(link)) {
+    const alt = link.find(l => l['@_rel'] === 'alternate' || !l['@_rel']);
+    return alt?.['@_href'] || link[0]?.['@_href'] || '';
+  }
+
+  return '';
+}
+
+/**
+ * Normalize a raw RSS/Atom item into the app's article shape:
  * { id, title, url, summary, publishedAt, source, sourceName, imageUrl, neighborhoods[], readTimeMinutes }
  */
 function normalizeItem(item, source, sourceName) {
-  const title = stripHtml(item.title || '');
-  const url = item.link || item.guid?.['#text'] || item.guid || '';
-  const rawSummary = item.description || item['content:encoded'] || '';
-  const summary = stripHtml(rawSummary).slice(0, 400);
-  const publishedAt = item.pubDate || item['dc:date'] || null;
-  const imageUrl = extractImageUrl(item);
+  const title = stripHtml(textValue(item.title));
 
-  // Combine title + summary for neighborhood matching
+  // Atom uses <published> or <updated>; RSS uses <pubDate>
+  const publishedAt = item.pubDate || item.published || item.updated || item['dc:date'] || null;
+
+  const url = extractUrl(item);
+
+  // Atom uses <summary> or <content>; RSS uses <description> or <content:encoded>
+  const rawSummary =
+    textValue(item.summary) ||
+    textValue(item.content) ||
+    item.description ||
+    item['content:encoded'] || '';
+  const summary = stripHtml(rawSummary).slice(0, 400);
+
+  const imageUrl = extractImageUrl(item);
   const neighborhoods = tagNeighborhoods(`${title} ${summary}`);
 
-  // Stable ID derived from the URL
-  const id = `article-${Buffer.from(url).toString('base64').slice(0, 16)}`;
+  // Stable ID derived from the URL (guard against non-string url)
+  const safeUrl = typeof url === 'string' ? url : JSON.stringify(url);
+  const id = `article-${Buffer.from(safeUrl).toString('base64').slice(0, 16)}`;
 
   return {
     id,
@@ -196,8 +267,16 @@ app.get('/api/rss', async (req, res) => {
     const xml = await response.text();
     const parsed = xmlParser.parse(xml);
 
-    const items = parsed?.rss?.channel?.item || [];
-    const articles = items.map(item => normalizeItem(item, source, config.sourceName));
+    // RSS 2.0 format: rss > channel > item[]
+    // Atom format:   feed > entry[]
+    const items =
+      parsed?.rss?.channel?.item ||
+      parsed?.feed?.entry ||
+      [];
+
+    // isArray only forces arrays for 'item' — Atom 'entry' may be a single object.
+    const itemArray = Array.isArray(items) ? items : [items];
+    const articles = itemArray.map(item => normalizeItem(item, source, config.sourceName));
 
     res.json(articles);
   } catch (err) {
