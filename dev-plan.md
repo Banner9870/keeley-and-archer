@@ -1180,17 +1180,22 @@ Organized by neighborhood. Each guide has 3–7 places. Unsplash photo IDs shoul
 | 20 | "Rogers Park Beach Day" | alkeefe | Rogers Park | Parks, Food & Drink | 4 | false | — | Journalist guide — "From the newsroom" |
 | 21 | "Little Village Bakeries" | marcodelgado | Little Village | Food & Drink | 5 | false | — | |
 | 22 | "Woodlawn Right Now" | keishawashington | Woodlawn | Culture, History, Food & Drink | 5 | false | — | South Side neighborhood in transition — Obama Presidential Center, longtime institutions, new businesses |
+| 23 | "Bronzeville Night Out" | marcodelgado | Bronzeville | Culture, Nightlife, Food & Drink | 5 | false | guide-11 | Added per task 3.5 — 4th required remix chain; forks Keisha's Bronzeville Cultural Trail with an after-dark focus |
+| 24 | "Beverly: The Far Southwest Side You Haven't Visited" | alkeefe | Beverly | Food & Drink, Bars | 6 | false | — | Added for SW side geographic balance — journalist guide, Al Keefe / WBEZ |
+| 25 | "Back of the Yards: History and Coffee" | marcodelgado | Back of the Yards | Food & Drink, History | 4 | true | — | Added for SW side geographic balance; Editor's Pick |
+| 26 | "Bridgeport: Old Chicago, Chinatown-Adjacent" | ellery | Bridgeport | Food & Drink, Nightlife | 4 | false | — | Added for SW side geographic balance — journalist guide, Ellery / Sun-Times |
 
 **Remix chains present:**
 - Guide 2 remixes Guide 1 (Lincoln Square nightlife fork)
 - Guide 4 remixes Guide 3 (Logan Square family fork)
 - Guide 10 remixes Guide 9 (Wicker Park daytime fork)
+- Guide 23 remixes Guide 11 (Bronzeville night-out fork — added per task 3.5)
 
-**Editor's Picks (5 total, meeting the "at least 4" requirement):**
-Guides 1, 3, 5, 8, 11
+**Editor's Picks (6 total, meeting the "at least 4" requirement):**
+Guides 1, 3, 5, 8, 11, 25
 
 **Journalist guides ("From the newsroom"):**
-Guides 6 (Ellery / Sun-Times), 8 (Al Keefe / WBEZ), 19 (Al Keefe / WBEZ), 20 (Al Keefe / WBEZ)
+Guides 6 (Ellery / Sun-Times), 8 (Al Keefe / WBEZ), 19 (Al Keefe / WBEZ), 20 (Al Keefe / WBEZ), 24 (Al Keefe / WBEZ), 26 (Ellery / Sun-Times)
 
 ### 7.3 Places (80 minimum)
 

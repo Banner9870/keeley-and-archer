@@ -343,7 +343,7 @@ A static seed data file (`src/data/seed.js` or `.json`) must be created to popul
 - Each place has: `id`, `name`, `address`, `neighborhood`, `category` (enum above), `rating` (3.5–5.0), `editorNote`, `coverImage`
 
 **Cover images — prototype approach (no media hosting required):**
-- Seeded guides use static Unsplash URLs — `https://images.unsplash.com/photo-[id]?w=800` — embedded directly as `<img>` tags. No API call, no storage, no cost.
+- Seeded guides use Unsplash Source URLs — `https://source.unsplash.com/featured/?chicago,{theme}` — embedded directly as `<img>` tags. No API call, no storage, no cost. Theme keywords (e.g. `neighborhood`, `food`, `music`, `park`) are matched to the guide's category.
 - Each seeded guide must have a `coverImage` URL.
 - Fallback if `coverImage` is null: Google Maps Static API image centered on the guide's first place.
 - **Guide creation photo picker:** Instead of a file upload field, the guide creation flow presents a curated gallery of ~20 Chicago-themed Unsplash photos for the participant to choose from. The selected photo URL is stored in session state. No uploads, no hosting — keeps the creation flow fast and uncluttered during user testing.
@@ -358,7 +358,7 @@ A static seed data file (`src/data/seed.js` or `.json`) must be created to popul
 ```
 type Place = { id, name, address, neighborhood, category, rating, editorNote, coverImage? }
 type User = { id, handle, displayName, neighborhood, yearsInChicago, badges[], isJournalist, publication? }
-type Guide = { id, title, description, authorId, neighborhood, categories[], places: Place[], coverImage?, likeCount, remixCount, remixOf?: guideId, isFeatured, isEditorsPick, createdAt }
+type Guide = { id, title, description, authorId, neighborhood, categories[], places: Place[], coverImage?, likeCount, remixCount, remixOf?: guideId, isEditorsPick, isSessionCreated, createdAt, privacy }
 ```
 
 **Trending / Editor's Pick flags:**
@@ -397,9 +397,10 @@ Routes must be declared in this exact order in React Router to prevent `/guide/n
 ### Header
 - Left: chicago.com wordmark (Big Shoulders Display, bold, with a ★ motif)
 - Center (desktop): primary navigation — Feed | Explore | Neighborhoods
+  - **Neighborhoods** opens a dropdown panel listing all 77 Chicago community areas, each linking to `/neighborhood/:slug`. The list is populated from `communityAreas` state (loaded by `useCommunityAreas`). Dropdown is dismissed on outside click or Escape. On mobile, the hamburger menu shows the full list inline instead of a dropdown.
 - Right of nav: `+ Create Guide` button (always visible, links to `/guide/new`)
 - Right: account avatar + "Alex Rivera" + `@alexrivera` — clicking opens dropdown with "Your Profile" (→ `/profile/alexrivera`) and "Your Guides" (→ `/profile/alexrivera`, guides tab active)
-- Mobile: hamburger menu contains all nav items + Create Guide CTA
+- Mobile: hamburger menu contains all nav items (including the full Neighborhoods list) + Create Guide CTA
 
 ### Footer
 - Chicago flag stripe decoration (two `--blue` horizontal bars)
