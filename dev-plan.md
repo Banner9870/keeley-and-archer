@@ -414,7 +414,7 @@ All tasks in this phase are appropriate for an agent to execute unless marked ot
 | 8.1 | Build `ProfileHeader.jsx` — display name, handle, neighborhood, years badge, interest chips; journalist variant with star badge and publication | M | Agent |
 | 8.2 | Build `ProfileTabs.jsx` — Guides / Remixes / Saved tab switcher | S | Agent |
 | 8.3 | Assemble `ProfilePage.jsx` — loads user from state by `:handle`, shows profile header, tabbed guide grid, empty states for no guides | M | Agent |
-| 8.4 | Wire "Your Profile" and "Your Guides" header dropdown links to `/profile/alexrivera` | S | Agent |
+| 8.4 | ~~Wire "Your Profile" and "Your Guides" header dropdown links to `/profile/alexrivera`~~ — **Removed:** "Your Guides" link was superfluous; account dropdown keeps only "Your Profile". | — | Done |
 
 #### Explore Page (`/explore`)
 

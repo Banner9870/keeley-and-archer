@@ -149,14 +149,6 @@ export default function Header() {
                 >
                   Your Profile
                 </Link>
-                <Link
-                  to={`/profile/${currentUser.handle}?tab=guides`}
-                  className={styles.dropdownItem}
-                  role="menuitem"
-                  onClick={() => setAccountDropdownOpen(false)}
-                >
-                  Your Guides
-                </Link>
               </div>
             )}
           </div>

@@ -399,7 +399,7 @@ Routes must be declared in this exact order in React Router to prevent `/guide/n
 - Center (desktop): primary navigation — Feed | Explore | Neighborhoods
   - **Neighborhoods** opens a dropdown panel listing all 77 Chicago community areas, each linking to `/neighborhood/:slug`. The list is populated from `communityAreas` state (loaded by `useCommunityAreas`). Dropdown is dismissed on outside click or Escape. On mobile, the hamburger menu shows the full list inline instead of a dropdown.
 - Right of nav: `+ Create Guide` button (always visible, links to `/guide/new`)
-- Right: account avatar + "Alex Rivera" + `@alexrivera` — clicking opens dropdown with "Your Profile" (→ `/profile/alexrivera`) and "Your Guides" (→ `/profile/alexrivera`, guides tab active)
+- Right: account avatar + "Alex Rivera" + `@alexrivera` — clicking opens dropdown with "Your Profile" (→ `/profile/alexrivera`)
 - Mobile: hamburger menu contains all nav items (including the full Neighborhoods list) + Create Guide CTA
 
 ### Footer
