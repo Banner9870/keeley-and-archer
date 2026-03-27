@@ -183,6 +183,114 @@
   text-decoration: none;
 }
 
+/* Neighborhoods dropdown */
+.neighWrapper {
+  position: relative;
+}
+
+.neighToggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.chevronSmall {
+  font-size: 0.65rem;
+  opacity: 0.7;
+}
+
+.neighDropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  width: 220px;
+  max-height: 380px;
+  overflow-y: auto;
+  z-index: 200;
+  /* thin scrollbar on webkit */
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-200) transparent;
+}
+
+.neighDropdown::-webkit-scrollbar {
+  width: 4px;
+}
+
+.neighDropdown::-webkit-scrollbar-thumb {
+  background: var(--gray-200);
+  border-radius: 2px;
+}
+
+.neighItem {
+  display: block;
+  padding: 8px 16px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--black);
+  text-decoration: none;
+  transition: background 0.1s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.neighItem:hover {
+  background: var(--gray-100);
+  color: var(--red);
+  text-decoration: none;
+}
+
+/* Mobile neighborhoods section */
+.mobileNeighSection {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.mobileNeighLabel {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 4px 0 8px;
+}
+
+.mobileNeighList {
+  max-height: 240px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+.mobileNeighItem {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: color 0.1s;
+}
+
+.mobileNeighItem:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
 /* Hamburger — shown on mobile only */
 .hamburger {
   display: none;

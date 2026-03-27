@@ -1,0 +1,155 @@
+.page {
+  background: var(--gray-100);
+  min-height: calc(100vh - 60px);
+  padding-bottom: var(--space-6);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-3) 0;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--black);
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--space-4);
+}
+
+/* Search bar */
+.searchBar {
+  position: relative;
+  margin-bottom: var(--space-5);
+}
+
+.searchInput {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--black);
+  background: var(--white);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  padding: 12px 44px 12px 16px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+  min-height: 48px;
+}
+
+.searchInput:focus {
+  border-color: var(--blue);
+}
+
+.searchInput::placeholder {
+  color: var(--gray-500);
+}
+
+/* Hide the browser's native clear button for search inputs */
+.searchInput::-webkit-search-cancel-button {
+  display: none;
+}
+
+.clearBtn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-500);
+  font-size: 0.85rem;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  min-width: 32px;
+}
+
+.clearBtn:hover {
+  color: var(--black);
+}
+
+/* Section */
+.section {
+  margin-bottom: var(--space-6);
+}
+
+.sectionHeading {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--black);
+  margin: 0 0 var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 3px solid var(--red);
+  display: inline-block;
+}
+
+.sectionHeadingBlue {
+  composes: sectionHeading;
+  border-bottom-color: var(--blue);
+  color: var(--blue);
+}
+
+/* Neighborhood grid */
+.neighborhoodGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: var(--space-2);
+}
+
+/* Guide grid */
+.guideGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+/* Article grid */
+.articleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.noResults {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--gray-500);
+  padding: var(--space-4) 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .guideGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .guideGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .articleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .neighborhoodGrid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+}

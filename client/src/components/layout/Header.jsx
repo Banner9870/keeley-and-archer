@@ -1,27 +1,68 @@
-import { useState, useRef, useEffect } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { useState, useRef, useEffect, useMemo } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { useAppContext } from '../../hooks/useAppContext';
 import StarIcon from '../shared/StarIcon';
+import fallbackTabular from '../../data/neighborhoods-fallback.json';
 import styles from './Header.module.css';
+
+// Build a sorted neighborhood list from the bundled static JSON.
+// Available immediately — no API call, no loading state.
+function toTitleCase(str) {
+  return str.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+}
+
+const NEIGHBORHOOD_NAV_LIST = fallbackTabular
+  .map(row => ({
+    name: toTitleCase(row.community),
+    slug: row.community.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
 
 export default function Header() {
   const { state } = useAppContext();
   const { currentUser } = state;
-  const navigate = useNavigate();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [accountDropdownOpen, setAccountDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  const [neighDropdownOpen, setNeighDropdownOpen] = useState(false);
 
-  // Close dropdown on outside click
+  const accountDropdownRef = useRef(null);
+  const neighDropdownRef = useRef(null);
+
+  // Close account dropdown on outside click
   useEffect(() => {
     function handleClick(e) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+      if (accountDropdownRef.current && !accountDropdownRef.current.contains(e.target)) {
         setAccountDropdownOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClick);
     return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  // Close neighborhoods dropdown on outside click
+  useEffect(() => {
+    function handleClick(e) {
+      if (neighDropdownRef.current && !neighDropdownRef.current.contains(e.target)) {
+        setNeighDropdownOpen(false);
+      }
+    }
+    if (neighDropdownOpen) {
+      document.addEventListener('mousedown', handleClick);
+      return () => document.removeEventListener('mousedown', handleClick);
+    }
+  }, [neighDropdownOpen]);
+
+  // Escape dismisses both dropdowns
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === 'Escape') {
+        setNeighDropdownOpen(false);
+        setAccountDropdownOpen(false);
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   const navLinkClass = ({ isActive }) =>
@@ -41,9 +82,36 @@ export default function Header() {
         <nav className={styles.nav} aria-label="Primary navigation">
           <NavLink to="/feed" className={navLinkClass}>Feed</NavLink>
           <NavLink to="/explore" className={navLinkClass}>Explore</NavLink>
-          <NavLink to="/neighborhood/lincoln-square" className={navLinkClass}>
-            Neighborhoods
-          </NavLink>
+
+          {/* Neighborhoods dropdown */}
+          <div className={styles.neighWrapper} ref={neighDropdownRef}>
+            <button
+              className={`${styles.navLink} ${styles.neighToggle} ${neighDropdownOpen ? styles.navLinkActive : ''}`}
+              onClick={() => setNeighDropdownOpen(v => !v)}
+              aria-haspopup="true"
+              aria-expanded={neighDropdownOpen}
+              aria-label="Browse neighborhoods"
+            >
+              Neighborhoods
+              <span className={styles.chevronSmall} aria-hidden="true">▾</span>
+            </button>
+
+            {neighDropdownOpen && (
+              <div className={styles.neighDropdown} role="menu" aria-label="Neighborhoods">
+                {NEIGHBORHOOD_NAV_LIST.map(area => (
+                  <Link
+                    key={area.slug}
+                    to={`/neighborhood/${area.slug}`}
+                    className={styles.neighItem}
+                    role="menuitem"
+                    onClick={() => setNeighDropdownOpen(false)}
+                  >
+                    {area.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Right side */}
@@ -53,7 +121,7 @@ export default function Header() {
           </Link>
 
           {/* Account dropdown */}
-          <div className={styles.accountWrapper} ref={dropdownRef}>
+          <div className={styles.accountWrapper} ref={accountDropdownRef}>
             <button
               className={styles.accountBtn}
               onClick={() => setAccountDropdownOpen(v => !v)}
@@ -82,7 +150,7 @@ export default function Header() {
                   Your Profile
                 </Link>
                 <Link
-                  to={`/profile/${currentUser.handle}`}
+                  to={`/profile/${currentUser.handle}?tab=guides`}
                   className={styles.dropdownItem}
                   role="menuitem"
                   onClick={() => setAccountDropdownOpen(false)}
@@ -124,13 +192,24 @@ export default function Header() {
           >
             Explore
           </NavLink>
-          <NavLink
-            to="/neighborhood/lincoln-square"
-            className={navLinkClass}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Neighborhoods
-          </NavLink>
+
+          {/* Neighborhoods — full inline list on mobile */}
+          <div className={styles.mobileNeighSection}>
+            <span className={styles.mobileNeighLabel}>Neighborhoods</span>
+            <div className={styles.mobileNeighList}>
+              {NEIGHBORHOOD_NAV_LIST.map(area => (
+                <Link
+                  key={area.slug}
+                  to={`/neighborhood/${area.slug}`}
+                  className={styles.mobileNeighItem}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {area.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <Link
             to="/guide/new"
             className={styles.mobileCreateBtn}

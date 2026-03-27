@@ -1,0 +1,49 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-top: 3px solid var(--blue);
+  border-radius: var(--border-radius);
+  padding: var(--space-2) var(--space-3);
+  text-decoration: none;
+  transition: box-shadow 0.15s, border-top-color 0.15s;
+  min-height: 72px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-top-color: var(--red);
+  text-decoration: none;
+}
+
+.number {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--gray-200);
+  line-height: 1;
+  align-self: flex-end;
+  margin-top: auto;
+  order: 3;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--black);
+  line-height: 1.2;
+  order: 1;
+}
+
+.count {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--gray-500);
+  order: 2;
+}
