@@ -1,0 +1,24 @@
+.banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background-color: #1a6634;
+  color: var(--white);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--space-3);
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: #7ee09b;
+  flex-shrink: 0;
+}
+
+.message {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  margin: 0;
+  color: var(--white);
+}

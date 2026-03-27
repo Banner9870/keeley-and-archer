@@ -1,14 +1,17 @@
-import { useParams, Navigate, Link } from 'react-router-dom';
+import { useParams, useSearchParams, Navigate, Link } from 'react-router-dom';
 import { useAppContext } from '../hooks/useAppContext';
 import GuideHero from '../components/guide/GuideHero';
 import PlaceListItem from '../components/guide/PlaceListItem';
 import RemixAttribution from '../components/guide/RemixAttribution';
 import LeafletMap from '../components/shared/LeafletMap';
 import ShareModal from '../components/shared/ShareModal';
+import SuccessBanner from '../components/shared/SuccessBanner';
 import styles from './GuideDetailPage.module.css';
 
 export default function GuideDetailPage() {
   const { id } = useParams();
+  const [searchParams] = useSearchParams();
+  const justCreated = searchParams.get('created') === 'true';
   const { state, dispatch } = useAppContext();
 
   const guide = state.guides.find(g => g.id === id);
@@ -46,6 +49,11 @@ export default function GuideDetailPage() {
 
   return (
     <div className={styles.page}>
+      {/* Success banner — shown when navigating from guide creation */}
+      {justCreated && (
+        <SuccessBanner message="Your guide was created! Share it with friends." />
+      )}
+
       {/* Hero — full-width cover image with title overlay */}
       <GuideHero guide={guide} author={author} />
 
