@@ -3,17 +3,18 @@ import styles from './NeighborhoodFilter.module.css';
 
 /**
  * NeighborhoodFilter — sidebar chip panel for filtering feed by neighborhood.
- * Shows neighborhoods derived from seeded guides.
+ * Shows all 77 Chicago community areas from communityAreas state (falls back
+ * to guide neighborhoods while community area data is still loading).
  * Dispatches TOGGLE_NEIGHBORHOOD_FILTER on chip click.
  */
 export default function NeighborhoodFilter() {
   const { state, dispatch } = useAppContext();
   const { selectedNeighborhoods } = state.feedPreferences;
 
-  // Build unique sorted list of neighborhoods from all guides
-  const neighborhoods = Array.from(
-    new Set(state.guides.map(g => g.neighborhood))
-  ).sort();
+  // Use all 77 community areas once loaded; fall back to guide neighborhoods
+  const neighborhoods = state.communityAreas.length > 0
+    ? state.communityAreas.map(a => a.name)
+    : Array.from(new Set(state.guides.map(g => g.neighborhood))).sort();
 
   function toggle(neighborhood) {
     dispatch({ type: 'TOGGLE_NEIGHBORHOOD_FILTER', payload: { neighborhood } });
