@@ -9,8 +9,8 @@
 import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../hooks/useAppContext';
-import { useCommunityAreas } from '../hooks/useCommunityAreas';
 import { usePlacesSearch } from '../hooks/usePlacesSearch';
+import fallbackTabular from '../data/neighborhoods-fallback.json';
 import TextInput from '../components/ui/TextInput';
 import Textarea from '../components/ui/Textarea';
 import Select from '../components/ui/Select';
@@ -21,6 +21,16 @@ import PhotoPicker from '../components/guide/PhotoPicker';
 import PlaceSearchResult from '../components/guide/PlaceSearchResult';
 import AddedPlaceRow from '../components/guide/AddedPlaceRow';
 import styles from './GuideCreatePage.module.css';
+
+// Build the sorted neighborhood list directly from the bundled static JSON.
+// No API call, no loading state — the JSON is already in the JS bundle.
+function toTitleCase(str) {
+  return str.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+}
+
+const NEIGHBORHOOD_OPTIONS = fallbackTabular
+  .map(row => ({ value: toTitleCase(row.community), label: toTitleCase(row.community) }))
+  .sort((a, b) => a.label.localeCompare(b.label));
 
 const CATEGORIES = [
   'Food & Drink',
@@ -47,9 +57,6 @@ const EMPTY_STEP1 = {
 export default function GuideCreatePage() {
   const navigate = useNavigate();
   const { state, dispatch } = useAppContext();
-
-  // Load community areas into context (no-op if already loaded)
-  useCommunityAreas();
 
   const [step, setStep] = useState(1);
   const [form, setForm] = useState(EMPTY_STEP1);
@@ -184,12 +191,6 @@ export default function GuideCreatePage() {
     navigate(`/guide/${id}?created=true`);
   }
 
-  // ── Build neighborhood options ──────────────────────────────
-
-  const neighborhoodOptions = state.communityAreas.map(a => ({
-    value: a.name,
-    label: a.name,
-  }));
 
   const addedIds = new Set(addedPlaces.map(p => p.id));
 
@@ -241,12 +242,8 @@ export default function GuideCreatePage() {
               label="Neighborhood *"
               value={form.neighborhood}
               onChange={handleNeighborhoodChange}
-              options={neighborhoodOptions}
-              placeholder={
-                state.communityAreasLoading
-                  ? 'Loading neighborhoods…'
-                  : 'Choose a neighborhood'
-              }
+              options={NEIGHBORHOOD_OPTIONS}
+              placeholder="Choose a neighborhood"
               error={neighborhoodError}
             />
 
