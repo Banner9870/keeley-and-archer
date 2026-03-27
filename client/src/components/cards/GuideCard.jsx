@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAppContext } from '../../hooks/useAppContext';
 import StarIcon from '../shared/StarIcon';
 import NeighborhoodTag from '../shared/NeighborhoodTag';
@@ -18,7 +17,6 @@ function getStaticMapUrl(place) {
  */
 export default function GuideCard({ guide, showRemixButton = true }) {
   const { state, dispatch } = useAppContext();
-  const navigate = useNavigate();
   const isLiked = state.likedIds.has(guide.id);
 
   const author = state.users.find(u => u.id === guide.authorId);

@@ -1,4 +1,4 @@
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Navigate, Link } from 'react-router-dom';
 import { useAppContext } from '../hooks/useAppContext';
 import GuideHero from '../components/guide/GuideHero';
 import PlaceListItem from '../components/guide/PlaceListItem';
@@ -9,15 +9,13 @@ import styles from './GuideDetailPage.module.css';
 
 export default function GuideDetailPage() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const { state, dispatch } = useAppContext();
 
   const guide = state.guides.find(g => g.id === id);
 
   // Task 5.18 — guide not found → redirect to feed
   if (!guide) {
-    navigate('/feed', { replace: true });
-    return null;
+    return <Navigate to="/feed" replace />;
   }
 
   const author = state.users.find(u => u.id === guide.authorId);
