@@ -205,10 +205,12 @@
   display: flex;
   gap: var(--space-1);
   align-items: flex-end;
+  min-width: 0;
 }
 
 .searchForm > *:first-child {
   flex: 1;
+  min-width: 0;
 }
 
 .searchLoading {
@@ -243,6 +245,7 @@
   border-radius: var(--border-radius);
   padding: 0 var(--space-2);
   max-height: 400px;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
@@ -296,11 +299,14 @@
 /* Mobile */
 @media (max-width: 768px) {
   .page {
-    padding: var(--space-2) 0;
+    padding: var(--space-2) var(--space-2);
+    overflow-x: hidden;
   }
 
   .stepContent {
-    padding: var(--space-3);
+    padding: var(--space-2);
+    box-sizing: border-box;
+    width: 100%;
   }
 
   .step2Layout {
@@ -309,5 +315,13 @@
 
   .guidePanel {
     order: -1; /* show your guide panel above search on mobile */
+  }
+
+  .searchForm {
+    flex-wrap: wrap;
+  }
+
+  .searchForm > *:first-child {
+    width: 100%;
   }
 }
