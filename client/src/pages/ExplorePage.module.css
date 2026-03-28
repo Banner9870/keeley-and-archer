@@ -7,7 +7,7 @@
 .inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--space-5) var(--space-3) 0;
+  padding: var(--space-4) var(--space-3) 0;
 }
 
 .heading {
@@ -23,7 +23,7 @@
 /* Search bar */
 .searchBar {
   position: relative;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-4);
 }
 
 .searchInput {
@@ -120,6 +120,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-3);
+}
+
+.mapHint {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin: 0 0 var(--space-3);
 }
 
 .noResults {

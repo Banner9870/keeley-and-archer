@@ -1,0 +1,58 @@
+.mapWrapper {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  cursor: pointer;
+}
+
+.map {
+  width: 100%;
+  height: 520px;
+}
+
+/* Skeleton while GeoJSON is loading */
+.skeleton {
+  width: 100%;
+  height: 520px;
+  background: linear-gradient(
+    90deg,
+    var(--gray-200) 25%,
+    #ececec 50%,
+    var(--gray-200) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: var(--border-radius);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Leaflet tooltip override */
+:global(.explore-map-tooltip) {
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+:global(.explore-map-tooltip::before) {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .map {
+    height: 360px;
+  }
+
+  .skeleton {
+    height: 360px;
+  }
+}

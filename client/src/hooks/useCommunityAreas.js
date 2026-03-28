@@ -2,16 +2,17 @@
 // useCommunityAreas.js — loads all 77 Chicago community areas
 // ============================================================
 // Source: bundled static JSON/GeoJSON files committed to the repo.
-// The community area list is static data — no API call needed.
-// GeoJSON is fetched from the bundled file URL (too large to inline
-// as a JS module, but served instantly as a local static asset).
+// GeoJSON is imported as a raw string and parsed once at module
+// load time — no async fetch, no skeleton wait.
 // ============================================================
 
 import { useEffect } from 'react';
 import { useAppContext } from './useAppContext';
 import fallbackTabular from '../data/neighborhoods-fallback.json';
-// .geojson is not a natively resolved JSON type in Vite — import as URL and fetch at runtime.
-import fallbackGeoJSONUrl from '../data/neighborhoods-fallback.geojson?url';
+// Import as raw string and parse synchronously — eliminates the async fetch round trip.
+import rawGeoJSON from '../data/neighborhoods-fallback.geojson?raw';
+
+const STATIC_GEOJSON = JSON.parse(rawGeoJSON);
 
 // Convert "LINCOLN SQUARE" → "Lincoln Square"
 function toTitleCase(str) {
@@ -37,33 +38,12 @@ export function useCommunityAreas() {
 
   useEffect(() => {
     // Only load once per session.
-    if (state.communityAreas.length > 0 || state.communityAreasLoading) return;
+    if (state.communityAreas.length > 0) return;
 
-    let cancelled = false;
+    const areas = fallbackTabular.map(normalizeArea).sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
 
-    async function load() {
-      dispatch({ type: 'SET_COMMUNITY_AREAS_LOADING' });
-
-      // Tabular data is bundled — normalize synchronously.
-      const areas = fallbackTabular.map(normalizeArea).sort((a, b) =>
-        a.name.localeCompare(b.name)
-      );
-
-      // GeoJSON is too large to bundle as JS; fetch from the static asset URL.
-      let geoJSON = null;
-      try {
-        const res = await fetch(fallbackGeoJSONUrl);
-        if (!cancelled && res.ok) geoJSON = await res.json();
-      } catch {
-        // GeoJSON unavailable — maps degrade gracefully (no boundary polygon).
-      }
-
-      if (!cancelled) {
-        dispatch({ type: 'LOAD_COMMUNITY_AREAS', payload: { areas, geoJSON } });
-      }
-    }
-
-    load();
-    return () => { cancelled = true; };
-  }, [state.communityAreas.length, state.communityAreasLoading, dispatch]);
+    dispatch({ type: 'LOAD_COMMUNITY_AREAS', payload: { areas, geoJSON: STATIC_GEOJSON } });
+  }, [state.communityAreas.length, dispatch]);
 }
