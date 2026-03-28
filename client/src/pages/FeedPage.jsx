@@ -78,10 +78,10 @@ function buildFeed(guides, articles, selectedNeighborhoods, selectedCategories) 
     ...categoryArticles.map(a => ({ type: 'article', item: a, date: toDate(a.publishedAt) })),
   ]).map(({ type, item }) => ({ type, item }));
 
-  const tier4 = [
-    ...sortByDate(remainingGuides).map(g => ({ type: 'guide', item: g })),
-    ...sortByDate(remainingArticles).map(a => ({ type: 'article', item: a })),
-  ];
+  const tier4 = sortByDate([
+    ...remainingGuides.map(g => ({ type: 'guide', item: g, date: toDate(g.createdAt) })),
+    ...remainingArticles.map(a => ({ type: 'article', item: a, date: toDate(a.publishedAt) })),
+  ]).map(({ type, item }) => ({ type, item }));
 
   return [...tier1, ...tier2, ...tier3, ...tier4];
 }

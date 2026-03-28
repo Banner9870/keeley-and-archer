@@ -142,7 +142,7 @@ The feed is explicitly non-algorithmic. Content is ordered by a transparent mix 
 2. **Your Neighborhoods** — content tagged to neighborhoods the user has selected
 3. **Your Categories** — content matching the user's selected interest categories
 
-Feed ordering logic: Editor's Picks first, then most recent content matching selected neighborhoods, then most recent content matching selected categories.
+Feed ordering logic: Editor's Picks first, then most recent content matching selected neighborhoods (guides and articles interleaved by date), then most recent content matching selected categories (guides and articles interleaved by date), then all remaining content (guides and articles interleaved by date). Guides and articles are never separated into distinct blocks within a tier.
 
 **Feed rendering rule:** When 2 or more article cards appear consecutively in the ordered list, group them under a `From the Newsroom` section subheader (Big Shoulders Text, `--blue`, thin `--blue` left border). A lone article between guide cards renders without a subheader. This prevents visual noise while keeping the mixed-content feel.
 
