@@ -31,7 +31,7 @@
 .emptyMsg {
   font-family: var(--font-body);
   font-size: var(--text-base);
-  color: var(--gray-500);
+  color: var(--gray-900);
   margin: 0 0 var(--space-3);
 }
 

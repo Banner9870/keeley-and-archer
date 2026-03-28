@@ -144,3 +144,10 @@
   color: var(--white);
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .actionBtn,
+  .readLink {
+    min-height: 44px;
+  }
+}

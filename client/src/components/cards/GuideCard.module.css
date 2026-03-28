@@ -227,3 +227,10 @@
   background-color: #c8001f;
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .actionBtn,
+  .remixBtn {
+    min-height: 44px;
+  }
+}

@@ -207,6 +207,10 @@
     align-items: stretch;
   }
 
+  .actionBtn {
+    min-height: 44px;
+  }
+
   .remixBtn {
     text-align: center;
     justify-content: center;
