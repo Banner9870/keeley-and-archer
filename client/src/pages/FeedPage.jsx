@@ -50,6 +50,14 @@ function buildFeed(guides, articles, selectedNeighborhoods, selectedCategories) 
     a.neighborhoods?.some(n => selectedCategories.includes(n))
   );
 
+  // Citywide articles — not already claimed by the neighborhood tier
+  const categoryArticleIds = new Set(categoryArticles.map(a => a.id));
+  const citywideArticles = articles.filter(a =>
+    a.isCitywide &&
+    !neighborhoodArticleIds.has(a.id) &&
+    !categoryArticleIds.has(a.id)
+  );
+
   // Remaining guides and articles
   const includedGuideIds = new Set([
     ...editorIds,
@@ -60,6 +68,7 @@ function buildFeed(guides, articles, selectedNeighborhoods, selectedCategories) 
   const includedArticleIds = new Set([
     ...neighborhoodArticles.map(a => a.id),
     ...categoryArticles.map(a => a.id),
+    ...citywideArticles.map(a => a.id),
   ]);
   const remainingArticles = articles.filter(a => !includedArticleIds.has(a.id));
 
@@ -78,12 +87,14 @@ function buildFeed(guides, articles, selectedNeighborhoods, selectedCategories) 
     ...categoryArticles.map(a => ({ type: 'article', item: a, date: toDate(a.publishedAt) })),
   ]).map(({ type, item }) => ({ type, item }));
 
+  const tier3b = sortByDate(citywideArticles).map(a => ({ type: 'article', item: a }));
+
   const tier4 = sortByDate([
     ...remainingGuides.map(g => ({ type: 'guide', item: g, date: toDate(g.createdAt) })),
     ...remainingArticles.map(a => ({ type: 'article', item: a, date: toDate(a.publishedAt) })),
   ]).map(({ type, item }) => ({ type, item }));
 
-  return [...tier1, ...tier2, ...tier3, ...tier4];
+  return [...tier1, ...tier2, ...tier3, ...tier3b, ...tier4];
 }
 
 // ── "From the Newsroom" grouping ────────────────────────────────────────────

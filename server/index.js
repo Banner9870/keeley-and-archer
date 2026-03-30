@@ -214,6 +214,14 @@ function normalizeItem(item, source, sourceName) {
   const imageUrl = extractImageUrl(item);
   const neighborhoods = tagNeighborhoods(`${title} ${summary}`);
 
+  // An article is citywide if it covers 3+ specific neighborhoods (broad multi-
+  // neighborhood reporting) or mentions Chicago generically with no specific
+  // neighborhood match (general city news).
+  const fullText = `${title} ${summary}`.toLowerCase();
+  const isCitywide =
+    neighborhoods.length >= 3 ||
+    (neighborhoods.length === 0 && fullText.includes('chicago'));
+
   // Stable ID derived from the URL (guard against non-string url)
   const safeUrl = typeof url === 'string' ? url : JSON.stringify(url);
   const id = `article-${Buffer.from(safeUrl).toString('base64').slice(0, 16)}`;
@@ -228,6 +236,7 @@ function normalizeItem(item, source, sourceName) {
     sourceName,
     imageUrl,
     neighborhoods,
+    isCitywide,
     readTimeMinutes: estimateReadTime(summary),
   };
 }

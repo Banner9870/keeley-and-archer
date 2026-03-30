@@ -142,7 +142,14 @@ The feed is explicitly non-algorithmic. Content is ordered by a transparent mix 
 2. **Your Neighborhoods** — content tagged to neighborhoods the user has selected
 3. **Your Categories** — content matching the user's selected interest categories
 
-Feed ordering logic: Editor's Picks first, then most recent content matching selected neighborhoods (guides and articles interleaved by date), then most recent content matching selected categories (guides and articles interleaved by date), then all remaining content (guides and articles interleaved by date). Guides and articles are never separated into distinct blocks within a tier.
+Feed ordering logic: five tiers, in order:
+1. **Editor's Picks** — guides flagged `isEditorsPick`, sorted by recency
+2. **Neighborhood-matched** — guides and articles tagged to the user's selected neighborhoods, interleaved by date
+3. **Category-matched** — guides and articles matching the user's selected categories, interleaved by date
+4. **Citywide news** — RSS articles flagged `isCitywide` (covers 3+ neighborhoods, or mentions Chicago with no specific neighborhood match), sorted by recency. These surface before unmatched seeded content so general Chicago reporting is always visible.
+5. **Remaining** — all other guides and articles, interleaved by date
+
+Within every tier, guides and articles are sorted together by recency — never separated into guide-first blocks.
 
 **Feed rendering rule:** When 2 or more article cards appear consecutively in the ordered list, group them under a `From the Newsroom` section subheader (Big Shoulders Text, `--blue`, thin `--blue` left border). A lone article between guide cards renders without a subheader. This prevents visual noise while keeping the mixed-content feel.
 
